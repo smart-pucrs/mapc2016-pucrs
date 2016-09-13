@@ -1,0 +1,34 @@
+<facilities>
+
+  <facility type="shop" id="shop1">
+    <location lat="52.3619" lon="9.7299"/>
+    <products>
+      <product id="base1" cost="5" amount="500" restock="2" />
+      <product id="base2" cost="17" amount="50" restock="3"/>
+      <product id="base3" cost="241" amount="30" restock="4"/>
+      <product id="tool1" cost="51" amount="5" restock="5"/>
+      <product id="tool2" cost="139" amount="3" restock="0"/>
+    </products>
+  </facility>
+
+  <facility type="workshop" cost="300" id="workshop1">
+    <location lat="52.3589" lon="9.7499"/>
+  </facility>
+
+  <facility type="storage" cost="3" capacity="10000" id="storage1">
+    <location lat="52.3731" lon="9.7462"/>
+  </facility>
+
+  <facility type="workshop" cost="300" id="workshop2">
+    <location lat="52.3781" lon="9.7060"/>
+  </facility>
+
+  <facility type="dump" cost="5" id="dump1">
+    <location lat="52.3664"  lon="9.7102"/>
+  </facility>
+
+  <facility type="charging" cost="1" concurrent="2" id="charging1" rate="80">
+    <location lat="52.3729" lon="9.7235"/>
+  </facility>
+
+</facilities>

@@ -1,0 +1,56 @@
+<actions>
+	<action
+		name="attack"
+		energyCost="2" energyCostFailed="2" energyCostDisabled="2" energyCostFailedDisabled="2"
+		healthCost="0" healthCostFailed="0" healthCostDisabled="0" healthCostFailedDisabled="0"
+		pointsCost="0" pointsCostFailed="0" pointsCostDisabled="0" pointsCostFailedDisabled="0"
+	/>
+	<action
+		name="parry"
+		energyCost="2" energyCostFailed="2" energyCostDisabled="2" energyCostFailedDisabled="2"
+		healthCost="0" healthCostFailed="0" healthCostDisabled="0" healthCostFailedDisabled="0"
+		pointsCost="0" pointsCostFailed="0" pointsCostDisabled="0" pointsCostFailedDisabled="0"
+	/>
+	<action
+		name="goto"
+		energyCost="1" energyCostFailed="1" energyCostDisabled="1" energyCostFailedDisabled="1"
+		healthCost="0" healthCostFailed="0" healthCostDisabled="0" healthCostFailedDisabled="0"
+		pointsCost="0" pointsCostFailed="0" pointsCostDisabled="0" pointsCostFailedDisabled="0"
+	/>
+	<action
+		name="probe"
+		energyCost="1" energyCostFailed="1" energyCostDisabled="1" energyCostFailedDisabled="1"
+		healthCost="0" healthCostFailed="0" healthCostDisabled="0" healthCostFailedDisabled="0"
+		pointsCost="0" pointsCostFailed="0" pointsCostDisabled="0" pointsCostFailedDisabled="0"
+	/>
+	<action
+		name="survey"
+		energyCost="1" energyCostFailed="1" energyCostDisabled="1" energyCostFailedDisabled="1"
+		healthCost="0" healthCostFailed="0" healthCostDisabled="0" healthCostFailedDisabled="0"
+		pointsCost="0" pointsCostFailed="0" pointsCostDisabled="0" pointsCostFailedDisabled="0"
+	/>
+	<action
+		name="inspect"
+		energyCost="2" energyCostFailed="2" energyCostDisabled="2" energyCostFailedDisabled="2"
+		healthCost="0" healthCostFailed="0" healthCostDisabled="0" healthCostFailedDisabled="0"
+		pointsCost="0" pointsCostFailed="0" pointsCostDisabled="0" pointsCostFailedDisabled="0"
+	/>
+	<action
+		name="repair"
+		energyCost="2" energyCostFailed="2" energyCostDisabled="3" energyCostFailedDisabled="3"
+		healthCost="0" healthCostFailed="0" healthCostDisabled="0" healthCostFailedDisabled="0"
+		pointsCost="0" pointsCostFailed="0" pointsCostDisabled="0" pointsCostFailedDisabled="0"
+	/>
+	<action
+		name="buy"
+		energyCost="2"  energyCostFailed="2" energyCostDisabled="2"  energyCostFailedDisabled="2"
+		healthCost="0"  healthCostFailed="0" healthCostDisabled="0"  healthCostFailedDisabled="0"
+		pointsCost="2" pointsCostFailed="0" pointsCostDisabled="2" pointsCostFailedDisabled="0"
+	/>
+	<action
+		name="recharge"
+		energyCost="50" energyCostFailed="0"  energyCostDisabled="30" energyCostFailedDisabled="0"
+		healthCost="0"  healthCostFailed="0"  healthCostDisabled="0"  healthCostFailedDisabled="0"
+		pointsCost="0"  pointsCostFailed="0"  pointsCostDisabled="0"  pointsCostFailedDisabled="0"
+	/>
+</actions>

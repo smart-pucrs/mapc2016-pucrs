@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interfaceConfig scenario="city2015" host="localhost" port="12300" scheduling="yes" times="no" notifications="no" queued="yes" statisticsFile="no" statisticsShell="no" submitStatistic="no">
+  <entities>
+    <entity name="connectionA1" username="a1" password="1" iilang="no" xml="no"/>
+    <entity name="connectionA2" username="a2" password="1" iilang="no" xml="no"/>
+    <entity name="connectionA3" username="a3" password="1" iilang="no" xml="no"/>
+    <entity name="connectionA4" username="a4" password="1" iilang="no" xml="no"/>
+    <entity name="connectionA5" username="a5" password="1" iilang="no" xml="no"/>
+    <entity name="connectionA6" username="a6" password="1" iilang="no" xml="no"/>
+    <entity name="connectionA7" username="a7" password="1" iilang="no" xml="no"/>
+    <entity name="connectionA8" username="a8" password="1" iilang="no" xml="no"/>
+    <entity name="connectionA9" username="a9" password="1" iilang="no" xml="no"/>
+    <entity name="connectionA10" username="a10" password="1" iilang="no" xml="no"/>
+    <entity name="connectionA11" username="a11" password="1" iilang="no" xml="no"/>
+    <entity name="connectionA12" username="a12" password="1" iilang="no" xml="no"/>
+    <entity name="connectionA13" username="a13" password="1" iilang="no" xml="no"/>
+    <entity name="connectionA14" username="a14" password="1" iilang="no" xml="no"/>
+    <entity name="connectionA15" username="a15" password="1" iilang="no" xml="no"/>
+    <entity name="connectionA16" username="a16" password="1" iilang="no" xml="no"/>
+    
+    <entity name="connectionB1" username="b1" password="1" iilang="no" xml="no"/>
+    <entity name="connectionB2" username="b2" password="1" iilang="no" xml="no"/>
+    <entity name="connectionB3" username="b3" password="1" iilang="no" xml="no"/>
+    <entity name="connectionB4" username="b4" password="1" iilang="no" xml="no"/>
+    <entity name="connectionB5" username="b5" password="1" iilang="no" xml="no"/>
+    <entity name="connectionB6" username="b6" password="1" iilang="no" xml="no"/>
+    <entity name="connectionB7" username="b7" password="1" iilang="no" xml="no"/>
+    <entity name="connectionB8" username="b8" password="1" iilang="no" xml="no"/>
+    <entity name="connectionB9" username="b9" password="1" iilang="no" xml="no"/>
+    <entity name="connectionB10" username="b10" password="1" iilang="no" xml="no"/>
+    <entity name="connectionB11" username="b11" password="1" iilang="no" xml="no"/>
+    <entity name="connectionB12" username="b12" password="1" iilang="no" xml="no"/>
+    <entity name="connectionB13" username="b13" password="1" iilang="no" xml="no"/>
+    <entity name="connectionB14" username="b14" password="1" iilang="no" xml="no"/>
+    <entity name="connectionB15" username="b15" password="1" iilang="no" xml="no"/>
+    <entity name="connectionB16" username="b16" password="1" iilang="no" xml="no"/>
+  </entities>
+</interfaceConfig>

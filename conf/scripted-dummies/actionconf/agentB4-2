@@ -1,0 +1,172 @@
+goto facility=shop2
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+buy item=base1 amount=28
+goto facility=workshop1
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+assemble item=tool3
+assemble item=material2
+assemble item=material2
+goto facility=storage1
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+store item=material2 amount=2
+bid_for_job job=job1 price=900
+goto facility=shop1
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+buy shop=shop1 item=base1 amount=25
+goto facility=workshop1
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+assemble item=material2
+goto facility=storage1
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+deliver_job job=job1
+retrieve item=material2 amount=3
+retrieve item=material2 amount=2
+deliver_job job=job1
+goto facility=dump1
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+dump item=base1 amount=18
+goto facility=charging1
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+charge station=charging1
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue

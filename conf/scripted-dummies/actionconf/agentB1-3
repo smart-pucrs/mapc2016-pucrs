@@ -1,0 +1,88 @@
+goto lat=51.808 lon=10.355
+skip
+skip
+skip
+goto
+continue
+goto lat=51.808 lon=10.355
+goto
+goto
+goto
+goto
+goto
+goto lat=51.798 lon=10.355
+goto
+goto
+goto
+goto
+goto
+goto
+goto
+goto
+post_job type=auction max_price=110 fine=50 active_steps=30 auction_steps=10 storage=storage1 item1=material2 amount1=7 item2=material1 amount2=9
+goto lat=51.798 lon=10.340
+goto
+goto
+goto
+goto
+goto
+goto lat=51.808 lon=10.340
+goto
+goto
+goto
+goto
+goto
+goto
+goto
+goto
+goto lat=51.808 lon=10.355
+goto
+goto
+goto
+goto
+goto
+goto lat=51.798 lon=10.355
+goto
+goto
+goto facility=charging1
+goto
+goto
+goto
+goto
+goto
+goto
+goto
+continue
+continue
+continue
+charge station=charging1
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+goto lat=51.798 lon=10.340
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue

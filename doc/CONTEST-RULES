@@ -1,0 +1,76 @@
+# MAPC 2016 PARAMETERS
+
+Each participating team will play one match consisting of 3 simulations against
+each other team. The following numbers of points are awarded after each
+simulation:
+
+    Win & money > seed capital: 3 points
+    Win & money <= seed capital: 2 points
+    Draw: 1 point
+    Loss: 0 points
+
+If two ore more teams have the same number of points after all matches have
+been played, the summed up scores (money at the end of the simulation)
+from each simulation decide and the team with the highest cumulative
+score wins.
+
+## Global parameters
+
+- steps per sim: 1000
+- seed capital: 50000
+- proximity: 0.0002
+- cellSize: 0.001
+- serviceTime: 25
+- serviceFee: 500
+- maps: will be announced closer to contest
+  - map 1: tba
+    - bounds: tba
+    - center: tba
+  - map 2: tba
+    - bounds: tba
+    - center: tba
+  - map 3: tba
+    - bounds: tba
+    - center: tba
+
+## Role parameters
+
+- Car
+  - speed: 3
+  - load: 550
+  - battery: 500
+  - tools: random
+- Drone
+  - speed: 5
+  - load: 100
+  - battery: 250
+  - tools: random
+- Motorcycle
+  - speed: 4
+  - load: 300
+  - battery: 350
+  - tools: random
+- Truck
+  - speed: 2
+  - load: 3000
+  - battery: 1000
+  - tools: random
+
+## Agent locations
+
+Assigned randomly.
+
+## Products
+
+Products will be generated using the random generation algorithm with
+undisclosed parameters.
+
+## Facilities
+
+Facilities will be generated using the random generation algorithm with
+undisclosed parameters.
+
+## Jobs
+
+Jobs will be generated using the random generation algorithm with undisclosed
+parameters.

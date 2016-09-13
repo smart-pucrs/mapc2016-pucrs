@@ -1,0 +1,4 @@
+<account actionclassmap="City" auxtimeout="750" defaultactionclass="massim.competition2015.MapSimulationAgentAction" maxpacketlength="65536" password="1" team="B" timeout="2750" username="b1" />
+<account actionclassmap="City" auxtimeout="750" defaultactionclass="massim.competition2015.MapSimulationAgentAction" maxpacketlength="65536" password="1" team="B" timeout="2750" username="b2" />
+<account actionclassmap="City" auxtimeout="750" defaultactionclass="massim.competition2015.MapSimulationAgentAction" maxpacketlength="65536" password="1" team="B" timeout="2750" username="b3" />
+<account actionclassmap="City" auxtimeout="750" defaultactionclass="massim.competition2015.MapSimulationAgentAction" maxpacketlength="65536" password="1" team="B" timeout="2750" username="b4" />

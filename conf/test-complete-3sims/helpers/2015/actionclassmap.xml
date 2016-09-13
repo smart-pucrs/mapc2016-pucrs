@@ -1,0 +1,4 @@
+<actionclassmap name="City">
+		<actionclass class="massim.competition2015.MapSimulationAgentAction" id="action"/>
+		<actionclass class="massim.framework.InvalidAction" id="invalid"/>
+</actionclassmap>

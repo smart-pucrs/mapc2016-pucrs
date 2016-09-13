@@ -1,2 +1,3 @@
-# mapc2016-pucrs
-The code used by the winner of the 2016 Multi-Agent Programming Contest (MAPC)
+# mas-pc-pucrs-2016
+Repository for the 2016 MAS programming contest
+https://multiagentcontest.org/

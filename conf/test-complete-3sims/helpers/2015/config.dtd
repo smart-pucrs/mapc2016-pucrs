@@ -1,0 +1,57 @@
+<!ENTITY teamAB SYSTEM "accounts-AB.xml">
+<!ENTITY teamA SYSTEM "accounts-A.xml">
+<!ENTITY teamB SYSTEM "accounts-B.xml">
+
+<!ENTITY teamA16 SYSTEM "accounts-A16.xml">
+<!ENTITY teamB16 SYSTEM "accounts-B16.xml">
+
+<!ENTITY teamA1 SYSTEM "accounts-A1.xml">
+<!ENTITY teamB1 SYSTEM "accounts-B1.xml">
+
+<!ENTITY simulation1 SYSTEM "sim1.xml">
+<!ENTITY simulation2 SYSTEM "sim2.xml">
+<!ENTITY simulation3 SYSTEM "sim3.xml">
+
+<!ENTITY actionclassmap SYSTEM "actionclassmap.xml">
+<!ENTITY sim-server SYSTEM "sim-server.xml">
+
+<!ENTITY actions SYSTEM "sim-actions.xml">
+<!ENTITY roles SYSTEM "sim-roles.xml">
+<!ENTITY agents SYSTEM "sim-agents.xml">
+
+<!ENTITY facilities SYSTEM "example-facilities.xml">
+<!ENTITY jobs SYSTEM "example-jobs.xml">
+
+<!ATTLIST conf
+	backuppath CDATA "backup"
+	launch-sync-type CDATA "key"
+	reportpath CDATA "./backup/"
+	time CDATA "12:15"
+	time-to-launch CDATA "10000"
+	tournamentmode CDATA "0"
+	tournamentname CDATA "City2016"
+	debug-level CDATA "normal"
+>
+
+<!ATTLIST simulation
+	configurationclass CDATA "massim.competition2015.configuration.MapSimulationConfiguration"
+	rmixmlobsserverhost CDATA "localhost"
+	rmixmlobsserverport CDATA "1099"
+	simulationclass CDATA "massim.competition2015.MapSimulation"
+	xmlstatisticsobserver CDATA "massim.competition2015.GraphSimulationXMLStatisticsObserver"
+	visualisationobserver CDATA "massim.competition2015.GraphSimulationVisualizationObserver"
+	visualisationobserver-outputpath CDATA "./output"
+	rmixmlobserverweb CDATA "massim.competition2015.GraphSimulationRMIXMLDocumentObserverWebInterface"
+	xmlobserver CDATA "massim.competition2015.MapSimulationXMLObserver"
+	xmlobserverpath CDATA "./xmls"
+
+	statisticsobserver CDATA "massim.competition2015.GraphSimulationStatisticsObserver"
+	statisticsobserverpath CDATA "./statistics"
+	rmixmlobserver CDATA "massim.competition2015.MapSimulationRMIXMLDocumentObserver"
+>
+
+<!ATTLIST configuration
+	xmlns:meta CDATA "http://www.tu-clausthal.de/"
+	numberOfAgents CDATA "16"
+	numberOfTeams CDATA "2"
+>

@@ -1,0 +1,165 @@
+goto facility=shop1
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+buy item=tool1 amount=1
+buy item=base1 amount=20
+goto facility=workshop1
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+assemble item=material1
+assemble item=material1
+assemble item=material1
+assemble item=material1
+goto facility=shop1
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+buy item=base2 amount=4
+goto facility=workshop1
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+assist_assemble assembler=a4
+assist_assemble assembler=a4
+receive
+goto facility=storage1
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+deliver_job job=job2
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+deliver_job job=job2
+continue
+goto facility=charging1
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+charge
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+goto facility=dump1
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+goto facility=workshop2
+continue

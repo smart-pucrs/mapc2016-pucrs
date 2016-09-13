@@ -1,0 +1,66 @@
+<simulation id="2016-tournament-sim2of3">
+  <configuration
+      maxNumberOfSteps="1000"
+      map="hannover"
+      seedcapital="50000"
+      interest="2"
+      minLon="9.68"
+      maxLon="9.81"
+      minLat="52.33"
+      maxLat="52.39"
+      proximity="0.0002"
+      cellSize="0.001"
+      serviceTime="25"
+      serviceFee="500"
+  >
+
+    &roles;
+    &products;
+    &facilitiesl;
+    &jobsl;
+
+    <generate products="true" facilities="true" jobs="true" agentLoc="true"
+      mapCenterLat="52.362967" mapCenterLon="9.712156">
+
+      <products
+        min="14" max="20"
+        minVol="10" maxVol="30"
+        assembled="0.6"
+        minReq="1" maxReq="3" reqAmountMin="1" reqAmountMax="3"
+        valueMin="100" valueMax="150" assembledValueAddMin="80" assembledValueAddMax="100"
+        toolPercentage="50"
+      />
+
+      <facilities quadSize="0.04">
+        <chargingStations density="0.9" rateMin="50" rateMax="150" costMin="1" costMax="1"
+          concurrMin="1" concurrMax="5"/>
+        <shops
+          density="0.8" minProd="3" maxProd="10" priceAddMin="110" priceAddMax="140"
+          amountMin="5" amountMax="20" restockMin="1" restockMax="5"
+          assembleAddMin="45" assembleAddMax="55"
+        />
+        <dumps density="0.6" costMin="1" costMax="2"/>
+        <workshops density="0.6" costMin="50" costMax="300"/>
+        <storages density="0.8" costMin="1" costMax="6" capacityMin="7500" capacityMax="15000"/>
+      </facilities>
+
+      <jobs
+        rate="0.2" auctionPerc="40"
+        productTypesMin="3" productTypesMax="5"
+        timeMin="70" timeMax="301"
+        valueMin="2000" valueMax="5000"
+        rewardSub="0" rewardAddMin="300" rewardAddMax="301"
+        badJob="0">
+        <auction
+          auctionTimeMin="2" auctionTimeMax="10"
+          fineSub="50" fineAdd="50"
+          maxRewardAdd="200"/>
+        <priced/>
+      </jobs>
+    </generate>
+
+  </configuration>
+
+  &agents;
+
+</simulation>

@@ -1,0 +1,29 @@
+<roles>
+	<role name="Car" speed="3"	loadCapacity="550" batteryCapacity="500">
+		<roads><road name="road"/></roads>
+		<tools>
+			<tool id="tool1"/>
+			<tool id="tool2"/>
+		</tools>
+	</role>
+	<role name="Drone" speed="5" loadCapacity="100" batteryCapacity="250">
+		<roads><road name="air"/><road name="road"/></roads>
+		<tools>
+			<tool id="tool1"/>
+		</tools>
+	</role>
+	<role name="Motorcycle" speed="4" loadCapacity="300" batteryCapacity="350">
+		<roads><road name="road"/></roads>
+		<tools>
+			<tool id="tool1"/>
+			<tool id="tool3"/>
+		</tools>
+	</role>
+	<role name="Truck" speed="2" loadCapacity="3000" batteryCapacity="1000">
+		<roads><road name="road"/></roads>
+		<tools>
+			<tool id="tool2"/>
+			<tool id="tool3"/>
+		</tools>
+	</role>
+</roles>

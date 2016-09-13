@@ -1,0 +1,228 @@
+goto facility=shop3
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+buy item=base1 amount=8
+goto facility=workshop1
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+assemble item=tool3
+goto facility=storage1
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+store item=tool3 amount=1
+goto facility=shop2
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+buy item=base1 amount=6
+buy item=tool1 amount=1
+goto facility=workshop2
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+assemble item=material1
+goto facility=storage1
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+deliver_job job=job1
+goto facility=shop1
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+buy item=base1 amount=6
+goto facility=charging2
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+charge
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+goto facility=workshop2
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+assemble item=material1
+goto facility=storage1
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+deliver_job job=job1
+goto facility=shop1
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+buy item=base1 amount=6
+goto facility=workshop1
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+assemble item=material1
+goto facility=storage1
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+deliver_job job=job1
+goto facility=charging3
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+charge
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue

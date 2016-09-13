@@ -1,0 +1,121 @@
+goto facility=shop1
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+buy shop=shop1 item=base3 amount=2
+buy shop=shop1 item=tool2 amount=1
+goto facility=storage1
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+retrieve storage=storage1 item=tool3 amount=1
+goto facility=workshop1
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+assemble item=material3
+assemble item=material3
+give agent=a1 item=material3 amount=2
+goto facility=charging1
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+charge station=charging1
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
+continue
