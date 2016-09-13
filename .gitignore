@@ -3,6 +3,8 @@
 backup/
 cache/
 graphs/
+/perceptlog/
+perceptlog/
 log/
 *.raw
 *.log
