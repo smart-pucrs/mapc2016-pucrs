@@ -45,14 +45,9 @@ public class EISArtifact extends Artifact {
 
 	private EnvironmentInterfaceStandard ei;
 	private boolean receiving;
-//	private boolean test = true;
 	private int lastStep = -1;
 	private int round = 0;
 	private String maps[] = new String[] { "london", "hannover", "sanfrancisco" };
-//	private String maps[] = new String[] { "hannover", "sanfrancisco","london", };
-//	private String maps[] = new String[] { "sanfrancisco", "hannover", "london" };
-	
-	
 	public EISArtifact() {
 		agentIds      = new ConcurrentHashMap<String, AgentId>();
 		agentToEntity = new ConcurrentHashMap<String, String>();
@@ -95,36 +90,7 @@ public class EISArtifact extends Artifact {
 			e.printStackTrace();
 		}
 	}	
-/*
-	@OPERATION
-	void register() {
-		try {
-			String agent = getOpUserId().getAgentName();
-			ei.registerAgent(agent);
-			ei.associateEntity(agent, agent);
-			System.out.println("Registering: " + agent);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 
-	@OPERATION
-	void register_freeconn() {
-		try {
-			String agent = getOpUserId().getAgentName();
-			ei.registerAgent(agent);
-			String entity = ei.getFreeEntities().iterator().next();
-			ei.associateEntity(agent, entity);
-			agentIds.put(agent, getOpUserId());
-			System.out.println("Registering " + agent + " to entity " + entity);
-			signal(agentIds.get(agent), "serverName", Literal.parseLiteral(entity.substring(10).toLowerCase()));
-		} catch (AgentException e) {
-			e.printStackTrace();
-		} catch (RelationException e) {
-			e.printStackTrace();
-		}
-	}
-*/
 	@OPERATION
 	void action(String action) throws NoValueException {
 		try {
@@ -222,7 +188,6 @@ public class EISArtifact extends Artifact {
 		// compute new perception
 		Literal step = null;
 		if (agent.equals("vehicle15")) {
-//			logger.info("############################### START");
 			for (Percept percept: percepts) {
 				if (step_obs_propv1.contains(percept.getName())) {
 					if (!previousPercepts.contains(percept) || percept.getName().equals("lastAction")) { // really new perception 
@@ -246,10 +211,8 @@ public class EISArtifact extends Artifact {
 					defineObsProperty(literal.getFunctor(), (Object[]) literal.getTermsArray());				
 				}
 			}
-//			logger.info("############################### END");
 		}
 		else {
-//			logger.info("############################### START");
 			for (Percept percept: percepts) {
 				if (step_obs_prop.contains(percept.getName())) {
 					if (!previousPercepts.contains(percept) || percept.getName().equals("lastAction")) { // really new perception 
@@ -272,33 +235,9 @@ public class EISArtifact extends Artifact {
 					defineObsProperty(literal.getFunctor(), (Object[]) literal.getTermsArray());				
 				}
 			}
-//			logger.info("############################### END");
 		}
-			
-		/*
-		cleanObsProps(step_obs_prop);
-		Literal step = null;
-		for (Percept percept : percepts) {
-			if (step_obs_prop.contains(percept.getName()) || match_obs_prop.contains(percept.getName())) {
-				Literal literal = Translator.perceptToLiteral(percept);
-				if (literal.getFunctor().equals("step")) {
-					step = literal;
-				} else if (literal.getFunctor().equals("simEnd")) {
-					cleanObsProps(step_obs_prop);
-					cleanObsProps(match_obs_prop);
-					defineObsProperty(literal.getFunctor(), (Object[]) literal.getTermsArray());
-					break;
-				} else {
-					logger.info("adding "+literal);
-					defineObsProperty(literal.getFunctor(), (Object[]) literal.getTermsArray());
-				}
-			}
-		}
-		*/
 		
 		if (step != null) {
-			//logger.info("adding "+step);
-			//signal(agentIds.get(agent), step.getFunctor(), (Object[]) step.getTermsArray());
 //			logger.info("adding "+step);
 			defineObsProperty(step.getFunctor(), (Object[]) step.getTermsArray());
 		}
@@ -324,19 +263,6 @@ public class EISArtifact extends Artifact {
 	void stopReceiving() {
 		receiving = false;
 	}
-	
-//	static Set<String> as_signal = new HashSet<String>( Arrays.asList(new String[] {
-//	"entity",
-//	"fPosition",
-//	"lastActionParam",
-//	"lat",
-//	"lon",
-//	"requestAction",
-//	"route",
-//	"routeLength",
-//	"team",
-//	"timestamp",		
-//}));
 
 	static Set<String> match_obs_prop = new HashSet<String>( Arrays.asList(new String[] {
 		"simStart",
@@ -421,179 +347,4 @@ public class EISArtifact extends Artifact {
 			MapHelper.addLocation(agent, new Location(agLon, agLat));
 		}
 	}	
-	
-/*
-	static List<String> agentise = Arrays.asList(new String[]{
-		"charge",
-		"fPosition",
-		"inFacility",
-		"item",
-		"lastAction",
-		"lastActionParam",
-		"lastActionResult",
-		"lat",
-		"load",
-		"lon",
-		"requestAction",
-		"role",
-		"route",
-		"routeLength",
-	});
-
-	public static List<Percept> agentise( String agent, Collection<Percept> perceptions ){
-		// TODO change entity name (a1) to Jason agent name (vehicle1)
-		List<Percept> list = new ArrayList<Percept>();
-		for(Percept perception : perceptions){
-			if(agentise.contains(perception.getName())){
-				LinkedList<Parameter> parameters = perception.getClonedParameters();
-				parameters.addFirst(new Identifier(agent));
-				perception = (Percept) perception.clone();
-				perception.setParameters(parameters);
-			}
-			list.add(perception);
-		}
-		return list;
-	}
-
-	
-	@INTERNAL_OPERATION
-	void receiving() throws JasonException {
-		// Set<Percept> leader_percepts = new HashSet<Percept>();
-		boolean filterIsFiltered = false;
-		int lastStep = -1;
-		Collection<Percept> previousPercepts = new ArrayList<Percept>();
-		while (receiving) {
-			// leader_percepts.clear();
-			if(test)
-				{
-					await_time(500);
-					signal("serverName", Literal.parseLiteral(entity.substring(10).toLowerCase()));
-					test = false;
-				}
-			try {
-				Literal step = null;
-				Collection<Percept> percepts = ei.getAllPercepts(this.agent).get(this.entity);
-				// leader_percepts.addAll(agentise(agent, percepts));
-				filterLocations(agent, percepts);
-				
-				// TODO change map when round finish
-				
-				for (Percept percept : filter(percepts)) {
-					String name = percept.getName();
-					/*Verifying available items in a nearby shop
-					if(name.equals("shop")){
-						for(Parameter p: percept.getParameters())
-							if(p.toString().contains("availableItem"))
-								pinShopAvailableItems(percept, p);
-					}
-					Literal literal = Translator.perceptToLiteral(percept);
-					if (literal.getFunctor().equals("step"))
-						step = literal;
-					else
-						signal(name, (Object[]) literal.getTermsArray());
-				}
-				if (step != null)
-					signal(step.getFunctor(), (Object[]) step.getTermsArray());
-			} catch (PerceiveException | NoEnvironmentException | JasonException e) {
-//				e.printStackTrace();
-			}
-			// Filtering the filter 
-			if(!filterIsFiltered){
-				for(String f:another_agent_filter.keySet())
-					another_agent_filter.put(f, true);
-				filterIsFiltered = true;
-			}
-			
-//			signal("ok");
-
-			for (Percept percept : leader_percepts) {
-				String name = percept.getName();
-				Literal literal = Translator.perceptToLiteral(percept);
-				signal(leader, name, (Object[]) literal.getTermsArray());
-			}
-*/
-/* 			exemplo de propriedade observavel
-			private String propertyName = "set_a_name"; //nome da propriedade
-			defineObsProperty(propertyName, 0); //define a new observable property and sets initial value
-			...
-			ObsProperty prop = getObsProperty(propertyName); //get current value of observable property
-			prop.updateValues(0); //updates current value of property (I am almost sure that this command generates a signal automatically)
-			signal(propertyName);
-
-			await_time(100);
-		}
-	}
-	
-	static Map<String, Boolean> another_agent_filter = new HashMap<String, Boolean>();
-	static{
-		another_agent_filter.put("dump", false);
-		another_agent_filter.put("storage", false);
-		another_agent_filter.put("workshop", false);
-		another_agent_filter.put("chargingStation", false);
-	}
-	
-	static List<String> agent_filter = Arrays.asList(new String[]{
-		"charge",
-//		"entity",
-//		"fPosition",
-		"inFacility",
-		"item",
-		"lastAction",
-//		"lastActionParam",
-//		"lastActionResult",
-//		"lat",
-		"load",
-//		"lon",
-//		"requestAction",
-		"role",
-		"step",
-//		"route",
-//		"routeLength",
-//		"team",
-//		"timestamp",		
-
-		"steps",
-		"jobTaken",
-		"simEnd",		
-		"auctionJob",		
-		"pricedJob",
-		"product",		
-		"shop",
-		"storage",
-		"workshop",
-		"chargingStation",
-		"dump",
-	});
-	
-	public static List<Percept> filter( Collection<Percept> perceptions ){
-		List<Percept> list = new ArrayList<Percept>();
-		for(Percept perception : perceptions){
-			if(agent_filter.contains(perception.getName())){
-				// Filtering the filter
-				if(another_agent_filter.containsKey(perception.getName()) && !another_agent_filter.get(perception.getName()))
-					continue;
-				
-				list.add(perception);
-			}
-		}
-		return list;
-	}
-		
-
-	
-	//This method defines/updates an observed property for consulting available items (price and amount) in the shops. 
-	// @param Percept percept
-	// @param Parameter param
-	public void pinShopAvailableItems(Percept percept, Parameter param) {
-		String propertyName = "availableItems";
-		ObsProperty property = getObsProperty(propertyName);
-		if (property == null) {
-			defineObsProperty(propertyName, percept.getParameters().get(0), new ParameterList());
-			property = getObsProperty(propertyName);
-		}
-
-		property.updateValues(percept.getParameters().get(0), param);
-		signal(propertyName);
-	}
-*/
 }

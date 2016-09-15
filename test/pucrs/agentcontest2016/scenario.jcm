@@ -1,91 +1,53 @@
-mas scenario1 {
+mas scenario {
 		
 	agent vehicle1: vehicle.asl {
-//		join: puc
-//		roles: bidder in puc.team1
 		goals: register("connectionA1")
 	}
 	agent vehicle2: vehicle.asl {
-//		join: puc
-//		roles: bidder in puc.team1
 		goals: register("connectionA2")
 	}
 	agent vehicle3: vehicle.asl {
-//		join: puc
-//		roles: bidder in puc.team1
 		goals: register("connectionA3")
 	}
 	agent vehicle4: vehicle.asl {
-//		join: puc
-//		roles: bidder in puc.team1
 		goals: register("connectionA4")
 	}
 	agent vehicle5: vehicle.asl {
-//		join: puc
-//		roles: bidder in puc.team1
 		goals: register("connectionA5")
 	}
 	agent vehicle6: vehicle.asl {
-//		join: puc
-//		roles: bidder in puc.team1
 		goals: register("connectionA6")
 	}
 	agent vehicle7: vehicle.asl {
-//		join: puc
-//		roles: bidder in puc.team1
 		goals: register("connectionA7")
 	}
 	agent vehicle8: vehicle.asl {
-//		join: puc
-//		roles: bidder in puc.team1
 		goals: register("connectionA8")
 	}
 	agent vehicle9: vehicle.asl {
-//		join: puc
-//		roles: bidder in puc.team1
 		goals: register("connectionA9")
 	}
 	agent vehicle10: vehicle.asl {
-//		join: puc
-//		roles: bidder in puc.team1
 		goals: register("connectionA10")
 	}	
 	agent vehicle11: vehicle.asl {
-//		join: puc
-//		roles: bidder in puc.team1
 		goals: register("connectionA11")
 	}
 	agent vehicle12: vehicle.asl {
-//		join: puc
-//		roles: bidder in puc.team1
 		goals: register("connectionA12")
 	}
 	agent vehicle13: vehicle.asl {
-//		join: puc
-//		roles: bidder in puc.team1
 		goals: register("connectionA13")
 	}
 	agent vehicle14: vehicle.asl {
-//		join: puc
-//		roles: bidder in puc.team1
 		goals: register("connectionA14")
 	}
 	agent vehicle15: vehicle.asl {
-//		join: puc
-//		roles: bidder in puc.team1
 		goals: register("connectionA15")
 	}
 	agent vehicle16: vehicle.asl {
-//		join: puc
-//		roles: bidder in puc.team1
 		goals: register("connectionA16")
 	}
-	
-//	organisation puc: pucteam-os.xml {
-//    	group team1: team {
-//			//debug                  // starts GUI for this group          
-//		}             
-//	}
 
 	asl-path: src/pucrs/agentcontest2016/agt
 	

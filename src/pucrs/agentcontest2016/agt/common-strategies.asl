@@ -1,33 +1,3 @@
-+!get_tools
-	: true
-<-
-	!buy_items;
-	!assemble_items;
-	.
-	
-+!buy_items
-	: true
-<-
-	for ( buyList(Item,Qty,Shop) )
-	{ 
-		!goto(Shop);
-		while ( buyList(Item2,Qty2,Shop) )
-		{
-			!buy(Item2,Qty2);	
-		}
-	}
-	.	
-
-+!assemble_items
-	: true
-<-
-	while ( assembleList(Item,Workshop) )
-	{
-		!goto(Workshop);
-		!assemble(Item);
-	}
-	.
-	
 +!go_dump
 	: dumpList(List)
 <-
@@ -50,18 +20,7 @@
 	for ( buyList(Item2,Qty2,ShopId) ) { 
 		while ( buyList(Item,Qty,ShopId) ) {
 			!buy(Item,Qty);
-//			.wait(1500);
 			!skip;
-//			?verify_item(Item,Qty,Result);
-//			if (Result) {
-//				.print("REMOVENDO ITEM");
-//				-buyList(Item,Qty,ShopId);
-//			}
-//			else {
-//				for (item(X,Y)) {
-//					.print("Item #",Y," ",X);
-//				}
-//			}
 		}
 	}
 	!goto(StorageId);
@@ -74,7 +33,6 @@
 	if (lastActionResult(ActionResult2) & (ActionResult2 == useless | ActionResult2 == failed_job_status) & load(Load) & Load \== 0) {
 		!go_dump;
 	}
-//	.send(vehicle1,tell,done);
 	.send(vehicle15,tell,done(JobId));
 	updateLoad(Me,LoadCap);
 	?winner(List,JobId,StorageId,ShopId)[source(X)];
@@ -99,13 +57,9 @@
 			?onMyWay(AuxList);
 			-onMyWay(AuxList);
 			+onMyWay([ChargingId|AuxList]);
-			//.print("me-to-facility: ",math.sqrt((Lat-Flat)**2+(Lon-Flon)**2));
-			//.print("me-to-charging: ",math.sqrt((Lat-Clat)**2+(Lon-Clon)**2));
-			//.print("charging-to-facility: ",math.sqrt((Clat-Flat)**2+(Clon-Flon)**2));
 		}
 	}
 	?onMyWay(Aux2List);
-//	.print("Lista: ",Aux2List);
 	if(.empty(Aux2List)){
 		?closest_facility(List2,Facility);
 		?closest_facility(List,FacilityId,FacilityId2);
@@ -124,13 +78,10 @@
 		}
 	}
 	else{
-//		.print("FacilityID: ",FacilityId);
 		?closest_facility(Aux2List,Facility);
 		?enough_battery_charging(Facility, Result);
 		if (not Result) {
-//			.print("I don't even have battery to go to the nearest charging station of the list, go to the nearest overall!");
 			?closest_facility(List2,FacilityAux);
-//			?closest_facility(List,FacilityAux,FacilityId2);
 			?enough_battery_charging2(FacilityAux, Facility, Result, BatteryCap);
 			if (not Result) {
 				+going(FacilityId); 
@@ -146,7 +97,6 @@
 		}
 		else {
 			?closest_facility(Aux2List,FacilityId,FacilityAux);
-//			.print("Closest of ",Aux2List," charging station to ",FacilityId," is ",FacilityAux);
 			?enough_battery_charging(FacilityAux, ResultAux);
 			if (ResultAux) {
 				FacilityAux2 = FacilityAux;
@@ -174,9 +124,7 @@
 	
 +!check_list_charging(List,FacilityId)
 <-
-//	.print("Not enough battery, trying to find another charging station.");
 	?closest_facility(List,FacilityId,Facility);
-//	.print("Closest of ",List," charging station to ",FacilityId," is ",Facility);
 	?enough_battery_charging(Facility, Result);
 	if (Result) {
 		+charge_in(Facility);
@@ -201,7 +149,6 @@
 	
 +!go_to_facility(Facility)
 <-
-//    .print("I am going to ", Facility);
 	!goto(Facility);
 	?step(S);
 	.print("I have arrived at ", Facility, "   -   Step: ",S);
@@ -240,15 +187,13 @@
 	: .my_name(Me) & role(Role, Speed, _, _, _) & shopList(List) & find_shops_id(List,[],ShopsList)
 <- 	
 	pucrs.agentcontest2016.actions.pathsToFacilities(Me, Role, Speed, ShopsList, Proposal);
-	
 	-+myProposal(Proposal);
-	//.print("My proposal ",Proposal);
 	.
 +!calculate_steps_required_all_shops
 <- 	
-// 	Adicionado este plano pq no de cima de vez em quando a lista de shops n�o era preenchida e ferrava tudo
 	!calculate_steps_required_all_shops;
 	.
+	
 +!sendAgentsToTheirShops
 	: tempAgentsSendProposals(ListShopAgent)
 <-
@@ -256,33 +201,10 @@
 		.send(Agent,achieve,go_to_facility(Shop));
 	}
 	.
-//+!calculateBestShopToEachAgent
-//	: tempComparingProposals(Proposals)
-//<-
-////	.print("Checking the nearest agent for each shop");
-//	-+tempAgentsSendProposals([]); 
-//	
-//	for (.member(currentProposal(Shop,FirstAgent,FirstSteps,SecondAgent,SecondSteps),Proposals) ){		
-//		Difference = (SecondSteps - FirstSteps);
-//		
-//		?tempAgentsSendProposals(InitialList);
-//		
-//		if (.member(proposalAgent(ShopProposal,FirstAgent,DifferenceStepsTwoAgents), InitialList) ){	
-//			if (Difference > DifferenceStepsTwoAgents){
-//				.difference(InitialList,[proposalAgent(ShopProposal,FirstAgent,DifferenceStepsTwoAgents)],TempProposal);
-//				.concat(TempProposal,[proposalAgent(Shop,FirstAgent,Difference)],NewProposals);	
-//				-+tempAgentsSendProposals(NewProposals);
-//			} 
-//		} else{
-//			.concat(InitialList,[proposalAgent(Shop,FirstAgent,Difference)],NewProposals);	
-//			-+tempAgentsSendProposals(NewProposals);
-//		}	
-//	}	
-// 	.
+
 +!calculateBestShopToEachAgent
 	: tempComparingProposals(Proposals)
 <-
-//	.print("Checking the nearest agent for each shop");
 	-+tempAgentsSendProposals([]); 
 	
 	for (.member(currentProposal(Shop,FirstAgent,FirstSteps,SecondAgent,SecondSteps),Proposals) ){		
@@ -300,13 +222,10 @@
 			-+tempAgentsSendProposals(NewProposals);
 		}
 	}	
-//	?tempAgentsSendProposals(Props);
-//	.print("List of proposals ",Props);
  	.
 +!make_proposal(AvailableShops, Proposals, [], AvailableAgents)
 	: .my_name(Me)
 <-
-//	.print("I'm the last one to make a proposal");
 	!calculate_steps_required_all_shops;
 		
 	!compare_proposals(AvailableShops, Proposals);
@@ -392,11 +311,7 @@
 	
 	?tempComparingProposals(LastProposals);
 	.
-+!compare_proposals(AvailableShops, Proposals)
-<-
-	.print("Passou Aqui, Nao Deveria");
-	?myProposal(MyProposal);	
-	.
+
 +!find_out_the_remaing_agent_and_shops(AvailableShops, AvailableAgents)
 	: tempAgentsSendProposals(ListShopAgent)
 <-
@@ -425,15 +340,7 @@
 +!order_agents_to_go_to_the_shops(ListOfAgents)
 	: not initiatorShopChoice
 <-	
-//	.findall(agents(Name),play(Name,truck,_),ListTrucks);
-//	.findall(agents(Name),play(Name,car,_),ListCars);
-//	.findall(agents(Name),play(Name,motorcycle,_),ListMotorcycles);
-//	.findall(agents(Name),play(Name,drone,_),ListDrones);
-	
 	ListOfAgents = [agents(vehicle1),agents(vehicle2),agents(vehicle3),agents(vehicle4),agents(vehicle5),agents(vehicle6),agents(vehicle7),agents(vehicle8),agents(vehicle9),agents(vehicle10),agents(vehicle11),agents(vehicle12),agents(vehicle13),agents(vehicle14),agents(vehicle15),agents(vehicle16)];
-
-	//.concat(ListDrones,ListMotorcycles,ListCars,ListTrucks,ListOfAgents);
-	//.print("AGENTS ",ListOfAgents);
 	.	
 //### RINGING ###
 
@@ -489,21 +396,9 @@
 	!go_dump;
 	!free;
 	.
-// We need to experiment tweaking the wait value
 +!free
 	: not .desire(goto(_)) & not .desire(charge)
 <-
 	!skip;
-//	.wait(500);
 	!free;
 	.
-
-/*
-+!go_nearest_shop
-	: shopList(List) & closest_facility(List, Facility)
-<-
-	!goto(Facility);
-	?step(S);
-	.print("I have arrived at ", Facility, "   -   Step: ",S);
-	.	
- */

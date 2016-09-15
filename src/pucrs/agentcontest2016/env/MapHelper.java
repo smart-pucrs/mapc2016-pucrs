@@ -4,8 +4,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.logging.Logger;
-
 import com.graphhopper.GHRequest;
 import com.graphhopper.GHResponse;
 import com.graphhopper.GraphHopper;
@@ -18,8 +16,6 @@ import massim.competition2015.scenario.Location;
 import massim.competition2015.scenario.Route;
 
 public class MapHelper {
-
-	private Logger logger = Logger.getLogger(MapHelper.class.getName());
 
 	private static String mapName = null;
 	private static GraphHopper hopper = null;

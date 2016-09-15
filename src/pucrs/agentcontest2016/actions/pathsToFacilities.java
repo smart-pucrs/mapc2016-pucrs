@@ -2,8 +2,6 @@ package pucrs.agentcontest2016.actions;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.logging.Logger;
-
 import jason.asSemantics.DefaultInternalAction;
 import jason.asSemantics.TransitionSystem;
 import jason.asSemantics.Unifier;
@@ -12,12 +10,12 @@ import jason.asSyntax.ListTermImpl;
 import jason.asSyntax.Literal;
 import jason.asSyntax.Term;
 import pucrs.agentcontest2016.env.MapHelper;
-import pucrs.agentcontest2016.env.TeamArtifact;
 
 public class pathsToFacilities extends DefaultInternalAction {
-//	private static final long serialVersionUID = 3044142657303654485L;
-	private static Logger logger = Logger.getLogger(pathsToFacilities.class.getName());
-	@Override
+
+	private static final long serialVersionUID = -2883308113671739682L;
+
+@Override
 	public Object execute(TransitionSystem ts, Unifier un, Term[] args) throws Exception {
 		
 		ListTerm proposals = new ListTermImpl();

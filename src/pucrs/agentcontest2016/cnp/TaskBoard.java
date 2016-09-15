@@ -1,5 +1,3 @@
-// CArtAgO artifact code for project contract_net_protocol
-
 package pucrs.agentcontest2016.cnp;
 
 import java.util.logging.Logger;

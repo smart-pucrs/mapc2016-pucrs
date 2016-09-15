@@ -1,7 +1,5 @@
 package pucrs.agentcontest2016.actions;
 
-import java.util.logging.Logger;
-
 import jason.asSemantics.DefaultInternalAction;
 import jason.asSemantics.TransitionSystem;
 import jason.asSemantics.Unifier;
@@ -15,8 +13,7 @@ import pucrs.agentcontest2016.env.MapHelper;
 
 public class closest extends DefaultInternalAction {
 
-	private static final long serialVersionUID = 3044142657303654485L;
-	private static Logger logger = Logger.getLogger(closest.class.getName());
+	private static final long serialVersionUID = 5552929201215381277L;
 
 	@Override
 	public Object execute(TransitionSystem ts, Unifier un, Term[] args) throws Exception {

@@ -11,7 +11,7 @@ import pucrs.agentcontest2016.env.MapHelper;
 
 public class route extends DefaultInternalAction {
 
-	private static final long serialVersionUID = 3044142657303654485L;
+	private static final long serialVersionUID = -5795941336220230870L;
 
 	// There are three ways to call this function:
 	//////// pucrs.agentcontest2016.actions.route(Role, FacilityId, RouteLen)

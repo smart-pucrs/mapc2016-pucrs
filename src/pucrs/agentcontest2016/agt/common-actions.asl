@@ -17,7 +17,6 @@
 +!goto(FacilityId)
 	: charge(Battery) & Battery == 0
 <-
-	.print("$> Calling Breakdown Service! I am stuck!");
 	!call_breakdown_service;
 	-going(FacilityId);
 	!goto(FacilityId);
@@ -50,13 +49,7 @@
 	!commitAction(goto(facility(FacilityId)));
 	!goto(FacilityId);
 	.
-/*
-+!goto(FacilityId)
-<-
-	!continue;	
-	!goto(FacilityId);
-	.
- */
+
 // Goto (option 2)
 // Lat and Lon must be floats
 +!goto(Lat, Lon)
@@ -328,23 +321,10 @@
 	-+lastActionReal(Action);
     action(Action); // the action in the artifact
 	.wait({ +step(_) }); // wait next step to continue
-
-//	if (Action \== skip) {
-//		.drop_desire(free);
-//	}
-//	if ( (Action \== continue) & (Action \== skip)) {
-//		.drop_desire(charge);
-//	}
 	if (Action \== skip & Action \== continue) {
 	    .print("Action: ",Action, "   -   Step: ",S);
     }
-//	?step(StepNew);
-//	.print("Resuming my action on step ",StepNew);
-	.wait(500);
-//	if (Action \== skip & not (lastActionResult(successful) | lastActionResult(successful_partial))) {
-//		.print("step ",S,", error executing ", Action, " trying again...");
-//		!commitAction(Action);
-//	}  
+	.wait(500); 
 	.
 
 +!commitAction(Action)
