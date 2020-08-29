@@ -1,4 +1,4 @@
-# PUCRS code for the MAPC of 2016
+# PUCRS code for the MAPC of 2016 ([paper here](https://www.inderscience.com/info/inarticle.php?artid=89595))
 
 To run our code first download the latest release, extract it to a folder, and import that folder to Eclipse.
 If you wish to run the server, the monitor, and our code all with one click, just right-click test/pucrs.agentcontest2016/ScenarioRunServer.java file, "Run as", "jUnit Test".
@@ -13,3 +13,15 @@ I am sure there are many more undocumented bugs, if you find them let us know :)
 
 We also never optimised the code. We planned on eventually doing so before the contest, but we had more pressing bugs to solve.
 We leave that to you if you wish (or check back here in the next contest, in 2017).
+
+### Contributors
+- Rafael C. Cardoso
+- Ramon Fraga Pereira
+- Guilherme Krzisch
+- Maurício C. Magnaguagno
+- Túlio Baségio
+- Tabajara Krausburg
+- Artur Freitas
+- Felipe Meneguzzi
+- Rafael H. Bordini
+- Jomi F. Hübner 
