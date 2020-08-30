@@ -23,5 +23,5 @@ We leave that to you if you wish (or check back here in the next contest, in 201
 - Tabajara Krausburg
 - Artur Freitas
 - Felipe Meneguzzi
-- Rafael H. Bordini
 - Jomi F. Hübner 
+- Rafael H. Bordini
